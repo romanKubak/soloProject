@@ -1,0 +1,53 @@
+<script defer src="/js/animate.js"></script>
+<script defer src="/js/logAndRegApplication.js"></script>
+<div class="bodyR">
+  <article class="containerR">
+
+    <div class="blockR">
+      <section class="blok__itemR block-itemR">
+        <h2 class="block-item__titleR">У вас уже есть аккаунт?</h2>
+        <button class="block-item__btnR signIN_R">Войти</button>
+      </section>
+      <section class="blok__itemR block-itemR">
+        <h2 class="block-item__titleR">У вас нет аккаунта?</h2>
+        <button class="block-item__btnR signUP_R">Зарегистрироваться</button>
+      </section>
+    </div>
+
+    <div class="form-boxR">
+      {{!-- Форма Входа --}}
+      <form id="logbodyIN" class="formR form__signIN">
+        <h3 class="form_titleR">Вход</h3>
+        <p>
+          <input class="form__inputR" type="text" placeholder="Логин" name="login" required>
+        </p>
+        <p>
+          <input class="form__inputR" type="password" placeholder="Пароль" name="password" required>
+        </p>
+        <p>
+          <button type="submit" class="form__btnR">Войти</button>
+        </p>
+      </form>
+      {{!-- Форма Регистрации --}}
+      <form id="logbodyREG" class="formR form__signUP">
+        <h3 class="form_titleR">Регистрация</h3>
+        <p>
+          <input class="form__inputR" type="text" placeholder="Логин" name="login" required>
+        </p>
+        <p>
+          <input class="form__inputR" type="text" placeholder="Имя" name="name" required>
+        </p>
+        <p>
+          <input class="form__inputR" type="text" placeholder="any@exsample.exmpl" name="email" required>
+        </p>
+        <p>
+          <input class="form__inputR" type="password" placeholder="Пароль" name="password" required>
+        </p>
+        <p>
+          <button type="submit" class="form__btnR">Зарегистрироваться</button>
+        </p>
+      </form>
+    </div>
+
+  </article>
+</div>

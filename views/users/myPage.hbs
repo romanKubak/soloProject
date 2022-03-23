@@ -1,0 +1,61 @@
+{{#if superuser}}
+<script defer src="/js/formShow.js"></script>
+<script defer src="/js/addLike.js"></script>
+<div class="product_container">
+  <div class="my_product">
+
+  </div>
+</div>
+<main id="logbody" class="main">
+
+  <button class="open-button" onclick="openForm()">Добавить звук</button>
+  <div class="form-popup" id="myForm">
+
+    <form id="formFetch" method="POST" action="/upload" enctype="multipart/form-data" class="form-container">
+      <h3 class="form_titleR">Добавить запись</h3>
+      <p>
+        <input class="inplog" style="color: black;" type="text" placeholder="Название" name="name" required>
+      </p>
+      <p>
+        <h6 class="form_titleR">выберете картинку</h6>
+      </p>
+      <div class="file"> <input type="file" name="images"></div>
+      <p>
+      <button type="submit" class="btn" onclick="closeForm()">Добавить</button>
+      <button type="" class="btn cancel" onclick="closeForm()">Закрыть</button>
+      </p>
+    </form>
+  </div>
+
+  <div class="content-container">
+    <h3 class="myAtext">Мои Записи</h3>
+
+    <div class="author-albums">
+      {{#each authorTrack}}
+      <div class="allCardsss{{id}}">
+        <div class="h3RK">
+          <h3>Название: {{name}}</h3>
+          <h3>Автор: {{author}}</h3>
+          <h3 class="upLike{{id}}">Лайки: {{likes}}</h3>
+        </div>
+        <div class="preview-album">
+          <img src="{{image}}" alt="anyPhoto" class="albumImg" width="200px" height="200px">
+        </div>
+        <div class="addLike">
+          <button id="{{id}}" class="like" type="submit">Поставить лайк</button>
+        </div>
+        <div class="delete">
+          <button id="{{id}}" class="delete" type="submit">Удалить</button>
+        </div>
+        <a href="/sound/{{id}}/edit">Редактировать</a>
+      </div>
+      {{/each}}
+    </div>
+
+  </div>
+
+  </div>
+
+</main>
+
+{{/if}}

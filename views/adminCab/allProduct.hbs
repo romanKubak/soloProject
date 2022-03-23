@@ -1,0 +1,40 @@
+<script defer src="/js/formShow.js"></script>
+<button class="open-button" onclick="openForm()">Добавить товар</button>
+<div class="form-popup" id="myForm">
+
+  <form id="formFetch" method="POST" action="/upload" enctype="multipart/form-data" class="form-container">
+    <h3 class="form_titleR">Карточка товара</h3>
+    <p>
+      <input class="inplog" style="color: black;" type="text" placeholder="Название" name="name" required>
+    </p>
+    <p>
+      <input class="inplog" style="color: black;" type="text" placeholder="Цена" name="price" required>
+    </p>
+    <div class="file"> <input type="file" name="images"></div>
+    <button type="submit" class="btn" onclick="closeForm()">Добавить</button>
+    <button type="" class="btn cancel" onclick="closeForm()">Закрыть</button>
+    </p>
+  </form>
+</div>
+
+<div class="content-container">
+  <h3 class="myAtext">Все товары</h3>
+
+  <div class="author-albums">
+    {{#each allProduct}}
+    <div class="allCardsss{{id}}">
+      <div class="h3RK">
+        <h3>Название: {{name}}</h3>
+        <h3>Цена: {{price}}</h3>
+      </div>
+      <div class="preview-album">
+        <img src="{{img}}" alt="anyPhoto" class="albumImg" width="200px" height="200px">
+      </div>
+      <div class="delete">
+        <button id="{{id}}" class="delete" type="submit">Удалить</button>
+      </div>
+      <a href="/sound/{{id}}/edit">Редактировать</a>
+    </div>
+    {{/each}}
+  </div>
+</div>

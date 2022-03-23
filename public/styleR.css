@@ -1,0 +1,255 @@
+.bodyR {
+  font-family: "Poppinz", sans-serif;
+  min-width: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(78, 78, 251); */
+}
+
+.containerR {
+  width: 800px;
+  height: 500px;
+  position: relative;
+}
+
+.blockR {
+  margin: 50px;
+  height: 100%;
+  /* background-color: rgba(255, 255, 255, 0.34); */
+  background: linear-gradient(131deg, #326870, #b8e1b7);
+  box-shadow: 31px 31px 62px #00000087, -31px -31px 62px #a2ffeca6;
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+
+  transition: 0.5s;
+}
+
+.blockR.active {
+  background-color: rgba(126, 246, 222, 0.34);
+}
+
+.blok__itemR{
+  width: 50%;
+}
+
+.block-itemR {
+  text-align: center;
+}
+
+.block-item__titleR {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.block-item__btnR {
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 30px;
+  width: 200px;
+}
+.block-item__btnR:hover {
+  box-shadow: 4px 4px 32px 28px rgba(34, 60, 80, 0.3);
+}
+
+.form-boxR {
+  margin: 30px;
+  background-color: #fff;
+  height: 100%;
+  width: 50%;
+  box-shadow: 0 5px 45px rgb(0, 0, 0, 0.25);
+  border-radius: 30px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  transition: 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.form-boxR.active {
+  left: 50%;
+}
+
+
+/* форма */
+
+.formR {
+  width: 100%;
+  /* padding: 50px; */
+  font-size: 16px;
+
+  position: absolute;
+  transition: 0.5s;
+}
+
+.form__signIN {
+  left: 0;
+    transition-delay: 0.25s;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.form__signUP {
+  left: 100%;
+  transition-delay: 0s;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.form-boxR.active .form__signIN {
+  left: -100%;
+  transition-delay: 0s;
+}
+
+.form-boxR.active .form__signUP {
+  left: 0;
+  transition-delay: 0.25s;
+}
+
+.form_titleR {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form__inputR {
+  width: 100%;
+  padding: 10px;
+  border: solid 0px #333;
+  background-color: #e7f0fe;
+  font-size: 130%;
+  border-radius: 14px;
+  width: 244px;
+  margin-top: 15px;
+}
+
+.form__btnR {
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  background-color: rgb(78, 173, 251);
+  color: #fff;
+  padding: 10px 50px;
+  border-radius: 30px;
+  width: 244px;
+  margin: 15px;
+}
+.form__btnR:hover {
+  color: #fff;
+  background: rgb(96, 222, 144);
+  box-shadow: 4px 4px 32px 1px rgba(0, 0, 0, 0.26);
+}
+
+.errorLog {
+  height: 39px;
+  width: 224px;
+  margin: 19px;
+  color: red;
+}
+
+@media (max-width: 992px) {
+  .containerR {
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0px;
+  }
+
+  .bodyR {
+    min-width: 0vh;
+  }
+  .blockR {
+    border-radius: 25px 25px 0px 0px ;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .block-itemR {
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  .form-boxR {
+    margin: 0px;
+    width: 100%;
+    height: 360px;
+    box-shadow: none;
+    border-radius: 0px;
+    position: relative;
+    bottom: 120px;
+    top: 0;
+  }
+  .form-boxR.active {
+    top: 0;
+    left: 0;
+  }
+  .form-boxR.active2 {
+    display: none;
+  }
+}
+
+@media (max-width: 570px) {
+  .containerR {
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0px;
+  }
+
+  .bodyR {
+    min-width: 0vh;
+  }
+  .blockR {
+    border-radius: 25px 25px 0px 0px ;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .block-itemR {
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  .form-boxR {
+    margin: 0px;
+    width: 100%;
+    height: 320px;
+    box-shadow: none;
+    border-radius: 0px;
+    position: relative;
+    bottom: 120px;
+    top: 0;
+  }
+  .form-boxR.active {
+    top: 0;
+    left: 0;
+  }
+}

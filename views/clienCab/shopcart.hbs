@@ -1,0 +1,47 @@
+<script defer src="/js/clientsApplication/payProduct.js"></script>
+<h3>Корзина</h3>
+<br>
+<br>
+<br>
+<br>
+<h4>Ожидают оплаты</h4>
+<div class="unpaiProduct">
+  {{#each unPayProducts}}
+  <div class="allProductClient">
+    <div class="h3RK">
+      <h3>Название: {{name}}</h3>
+      <h3>Цена: {{price}}</h3>
+    </div>
+    <div class="preview-album">
+      <img src="{{img}}" alt="anyPhoto" class="albumImg" width="200px" height="200px">
+    </div>
+    <div class="buy{{id}}">
+      <button id="{{id}}" type="submit" class="btnPayment" data-entryid="{{ id }}"
+        style="cursor: pointer; padding: 15px; border-radius: 14px; background-color: #4bafef;">Оплатить</button>
+    </div>
+  </div>
+  {{/each}}
+</div>
+<br>
+<br>
+<br>
+<br>
+<h4>Ожидают выполнения</h4>
+<div class="unpaiProduct">
+  {{#each payProducts}}
+  <div class="allProductClient">
+    <div class="h3RK">
+      <h3>Название: {{name}}</h3>
+      <h3>Цена: {{price}}</h3>
+    </div>
+    <div class="preview-album">
+      <img src="{{img}}" alt="anyPhoto" class="albumImg" width="200px" height="200px">
+    </div>
+  </div>
+  {{/each}}
+</div>
+<br>
+<br>
+<br>
+<br>
+<h4>Готовые заказы</h4>

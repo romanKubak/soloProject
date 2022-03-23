@@ -1,0 +1,22 @@
+<h3>Редактирование записи</h3>
+
+<br>
+<br>
+<br>
+<br>
+<br><br>
+
+<br>
+
+<form id="editEntryForm" data-entryid="{{sound.id}}">
+  <label for="title-input" class="block mar-b-1">Name:</label>
+  <input id="title-input" name="name" type="text" value="{{sound.name}}" tabindex="1"
+    class="block w-100 no-outline no-border pad-1 mar-b-2" style="border-radius: 10px; background-color: aqua; width: 150px; height: 30px; padding: 10px;">
+    <label for="title-input" class="block mar-b-1">Author:</label>
+    <input id="title-input" name="author" type="text" value="{{sound.author}}" tabindex="1"
+    class="block w-100 no-outline no-border pad-1 mar-b-2" style="border-radius: 10px; background-color: aqua; width: 150px; height: 30px; padding: 10px;">
+    <input id="title-input" name="file" type="file"  tabindex="1"
+    class="block w-100 no-outline no-border pad-1 mar-b-2" style="border-radius: 10px;">
+  <input type="submit" value="Update" tabindex="3"
+    class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline" style="cursor: pointer; width: 150px; height: 30px; padding: 10px;">
+</form>

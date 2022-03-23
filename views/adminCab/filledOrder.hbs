@@ -1,0 +1,23 @@
+<h3>Выполненные заказы</h3>
+
+<div class="content-container">
+  <h3 class="myAtext">Все товары</h3>
+
+  <div class="author-albums">
+    {{#each allProduct}}
+    <div class="allCardsss{{id}}">
+      <div class="h3RK">
+        <h3>Название: {{name}}</h3>
+        <h3>Цена: {{price}}</h3>
+      </div>
+      <div class="preview-album">
+        <img src="{{img}}" alt="anyPhoto" class="albumImg" width="200px" height="200px">
+      </div>
+      <div class="delete">
+        <button id="{{id}}" class="delete" type="submit">Удалить</button>
+      </div>
+      <a href="/sound/{{id}}/edit">Редактировать</a>
+    </div>
+    {{/each}}
+  </div>
+</div>

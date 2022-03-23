@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/styleHead.css">
+  <link rel="stylesheet" href="/styleR.css">
+  <link rel="stylesheet" href="/styleForm_addAlb.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <script defer src="/js/animateHeader.js"></script>
+  <title>Album Maker</title>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <header class="header">
+
+      <div class="container">
+
+        <div class="header__body">
+
+          <a href="/" class="header__logo">
+            {{!-- <img src="/photo/1648023965295.jpeg" alt="anyPhoto" style="background-color: aqua;"> --}}
+            <h3>Topchick_Flower</h3>
+          </a>
+          <div id="header__burger" class="header__burger">
+            <span></span>
+          </div>
+          <nav id="header__menu" class="header__menu">
+            <ul class="header__list">
+              {{#unless superuser}}
+              <li>
+                <a href="/" class="header__link">Главная</a>
+              </li>
+              <li>
+                <a href="/avtorization" class="header__link">Авторизоваться</a>
+              </li>
+              {{/unless}}
+              {{#if superuser}}
+              <li class="no-bullets no-margin no-padding right">
+                <h3>Hello {{superuser}}</h3>
+              </li>
+              <li>
+                <a href="/" class="header__link">Главная</a>
+              </li>
+              {{#if isAdmin}}
+              <li>
+                <a href="/" class="header__link">Админ аккаунт</a>
+              </li>
+              <li>
+                <a href="/myCab" class="header__link">Личный кабинет</a>
+              </li>
+              {{/if}}
+              {{#unless isAdmin}}
+              <li>
+                <a href="/shopcart" class="header__link">Корзина</a>
+              </li>
+              {{/unless}}
+              <li>
+                <a href="/loguot" class="header__link">Выйти</a>
+              </li>
+              {{/if}}
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </header>
+
+    <div class="content">
+      <div class="container">
+        {{{body}}}
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

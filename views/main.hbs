@@ -1,0 +1,110 @@
+{{#if isAdmin}}
+<script defer src="/js/formShow.js"></script>
+<script defer src="/js/addLike.js"></script>
+<div class="product_container">
+  <div class="my_product">
+
+  </div>
+</div>
+<main id="logbody" class="main">
+
+  <button class="open-button" onclick="openForm()">Добавить звук</button>
+  <div class="form-popup" id="myForm">
+
+    <form id="formFetch" method="POST" action="/upload" enctype="multipart/form-data" class="form-container">
+      <h3 class="form_titleR">Карточка товара</h3>
+      <p>
+        <input class="inplog" style="color: black;" type="text" placeholder="Название" name="name" required>
+      </p>
+      <p>
+        <input class="inplog" style="color: black;" type="text" placeholder="Цена" name="price" required>
+      </p>
+      <div class="file"> <input type="file" name="images"></div>
+      <button type="submit" class="btn" onclick="closeForm()">Добавить</button>
+      <button type="" class="btn cancel" onclick="closeForm()">Закрыть</button>
+      </p>
+    </form>
+  </div>
+  <h2>Главная страница</h2>
+  {{#if allProduct}}
+  <div class="content-container">
+    <h3 class="myAtext">Мои Записи</h3>
+    <div class="author-albums">
+      {{#each allProduct}}
+      <div class="allCardsss">
+        <div class="h3RK">
+          <h3>Название: {{name}}</h3>
+          <h3>Цена: {{price}}</h3>
+        </div>
+        <div class="preview-album">
+          <img src="{{img}}" alt="anyPhoto" class="albumImg" width="200px" height="200px">
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+  {{#unless allProduct}}
+  <div class="content-container">
+    <h3 class="myAtext">Мои Записи</h3>
+    <br>
+    <br>
+    <h3>Записей пока нет</h3>
+    <br>
+    <br>
+  </div>
+  {{/unless}}
+
+  {{!-- <div class="content-container">
+    <h3 class="myAtext">ТОП 5 рейтинга:</h3>
+  <br>
+  <br>
+  <br>
+  <br>
+    <div class="author-albums">
+      {{#each fullPriceProduct}}
+      <div class="allCardsss">
+        <div class="h3RK">
+          <h3>Название: {{name}}</h3>
+          <h3>Цена: {{price}}</h3>
+          <h3 class="upLike{{id}}">Лайки: {{likes}}</h3>
+        </div>
+        <div class="preview-album">
+          <img src="{{img}}" alt="anyPhoto" class="albumImg" width="200px" height="200px">
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div> --}}
+
+  </div>
+
+</main>
+
+{{/if}}
+{{#unless isAdmin}}
+<script defer src="/js/clientsApplication/addShopCart.js"></script>
+<h2>Главная страница</h2>
+  {{#if allProduct}}
+    <div class="content-container">
+      <h3 class="myAtext">Мои Записи</h3>
+      <div class="AllProduct">
+        {{#each allProduct}}
+          <div class="allProductClient">
+            <div class="h3RK">
+              <h3>Название: {{name}}</h3>
+              <h3>Цена: {{price}}</h3>
+            </div>
+            <div class="preview-album">
+              <img src="{{img}}" alt="anyPhoto" class="albumImg" width="200px" height="200px">
+            </div>
+            <div class="buy{{id}}">
+              <button id="{{id}}" type="submit" class="btnPushShopCart" data-entryid="{{ id }}" style="cursor: pointer; padding: 15px; border-radius: 14px; background-color: #4bafef;">Купить</button>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/if}}
+
+{{/unless}}
